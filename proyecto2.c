@@ -1,9 +1,33 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>  
-//En este si  deja editar XDDDDDDDDDD
+
+//base de datos cola de usuarios (cola) 
+struct nodo{
+char nombreAdoptante [50];
+char direccion [50];
+char correo[50];
+char telefono[11];
+char contrasenia[50];
+char idAdoptante[50];
+struct nodo* aptSigNodo;
+}:
+
+struct cola{
+struct nodo aptFrente; 
+struct nodo aptAtras; 
+int tamanioActual;
+}
+
+//funciones para base de datos de cola// 
+int estavacia (struct cola adoptantes); 
+void inicializar (struct cola adoptantes); 
+void encolar (struct cola adoptantes); 
+void desencolar (struct cola adoptantes);
 
 int main() {
     char seleccion;
+    int numAdoptante=01;
 
     while (1) {
         system("clear");
