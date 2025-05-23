@@ -47,7 +47,7 @@ int main() {
         switch (seleccion) {
             case 'A':
                 printf("Ha seleccionado:\nREGISTRO DEL ADOPTANTE\n");
-                regisAdopt(struct cola adoptantes);
+                regisAdopt(struct cola *adoptantes);
                 break;
             case 'B':
                 printf("Ha seleccionado:\nATENDER UN ADOPTANTE\n");
@@ -72,10 +72,15 @@ int main() {
 }
 
 //REGISTRO DE LOS ADOPTANTES
-void regisAdopt(struct cola *adoptantes){
+void regisAdopt(struct cola *adoptantes)
+{
+    while(1)
+    {
     system("clear");
     printf("Ingrese el nombre completo del adoptante:\n");
     scanf(" %s", adoptantes.nombreAdoptante);
+
+    Ingrese
     //VERIFICAR ESA MMMDAAAAAA
 
 
@@ -85,4 +90,30 @@ void regisAdopt(struct cola *adoptantes){
     char telefono[11];
     char contrasenia[50];
     char idAdoptante[50];*/
+
+	        char respuesta2[3];
+			printf("\n¿Desea volver al menú principal? (si/no)\n");
+			printf("(ADVERTENCIA: al poner 'no' iniciará sesión)\n");
+			scanf("%s", respuesta2);
+			getchar();
+
+			if (strcmp(respuesta2, "si") == 0) 
+            {
+				break; // Regresar al menu: principal
+			} 
+            else if (strcmp(respuesta2, "no") == 0) 
+            {
+				printf("\n");
+				ingreso();
+				break; // Regresar al menu: despues de iniciar sesion
+			}
+		 else if (strcmp(respuesta1, "no") == 0) {
+			printf("\nPor favor corrija los datos.\n");
+			sleep(2);
+			system("clear");
+		} else {
+			printf("Opción no valida.\n");
+		}
+    }    
 }
+
