@@ -86,3 +86,5 @@ void regisAdopt(struct cola *adoptantes){
     char contrasenia[50];
     char idAdoptante[50];*/
 }
+
+void opcionA();
